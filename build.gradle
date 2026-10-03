@@ -1,0 +1,53 @@
+plugins {
+    id 'java'
+}
+
+group = 'org.serenityselenium.practice'
+version = '1.0-SNAPSHOT'
+
+repositories {
+    mavenCentral()
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/io.github.bonigarcia/webdrivermanager
+    implementation 'io.github.bonigarcia:webdrivermanager:6.3.3'
+    // Source: https://mvnrepository.com/artifact/org.seleniumhq.selenium/selenium-java
+    implementation 'org.seleniumhq.selenium:selenium-java:4.50.0'
+    // https://mvnrepository.com/artifact/org.apache.poi/poi
+    implementation 'org.apache.poi:poi:5.4.1'
+    // https://mvnrepository.com/artifact/org.apache.poi/poi-ooxml
+    implementation 'org.apache.poi:poi-ooxml:5.4.1'
+    implementation 'commons-io:commons-io:2.20.0'
+}
+
+dependencies {
+    // https://mvnrepository.com/artifact/org.testng/testng
+    testImplementation 'org.testng:testng:7.11.0'
+    // https://mvnrepository.com/artifact/io.cucumber/cucumber-java
+    testImplementation 'io.cucumber:cucumber-java:7.31.0'
+    // https://mvnrepository.com/artifact/io.cucumber/cucumber-junit
+    testImplementation 'io.cucumber:cucumber-junit:7.31.0'
+    // https://mvnrepository.com/artifact/io.cucumber/cucumber-core
+    testImplementation 'io.cucumber:cucumber-core:7.31.0'
+    testImplementation 'net.masterthought:cucumber-reporting:5.7.5'
+}
+
+test {
+//    useJUnit()
+//    include '**/*RunnerTest.class'
+//    systemProperty "cucumber.filter.tags",
+//            System.getProperty("cucumber.filter.tags")
+}
+
+
+tasks.register('sasLab', Test) {
+//    useJUnit()
+//    testClassesDirs = sourceSets.test.output.classesDirs
+//    classpath = sourceSets.test.runtimeClasspath
+//
+//    include '**/*RunnerTest.class'
+//
+//    systemProperty "cucumber.filter.tags",
+//            System.getProperty("cucumber.filter.tags")
+}
