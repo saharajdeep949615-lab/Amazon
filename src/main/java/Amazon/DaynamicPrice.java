@@ -21,20 +21,22 @@ public class DaynamicPrice {
         driver.findElement(By.xpath("//input[@id='twotabsearchtextbox']")).sendKeys("Shrit");
         driver.findElement(By.xpath("//input[@id='nav-search-submit-button']")).click();
 
-        String[] names={"Men's Checkered Casual Shirt - Regular Fit | Full Sleeve | Pure Cotton (Available in Plus Sizes)"};
+        String[] names={"Men's Regular Fit 100% Cotton Formal Shirt"};
 
         List<WebElement> lists=driver.findElements(By.xpath("//div[@class='a-section a-spacing-none a-spacing-top-small s-title-instructions-style']"));
         //lists.get(1).click();
 
         for(int i=0;i<lists.size();i++){
-            String itmestext=lists.get(i).getText().split("Premium")[1].trim();
+            String itmestext=lists.get(i).getText();
             System.out.println(itmestext);
             List items= Arrays.asList(names);
             System.out.println(items);
             if(itmestext.contains(items.get(i).toString())){
-                String price = lists.get(i).findElement(By.xpath(".//following::span[@class='a-price-whole'][1]")).getText();
+                String price = lists.get(i).findElement(By.xpath(".//following::span[@class='a-price-whole']")).getText();
                 String ShirtPrice=driver.findElement(By.xpath("//span[text()='"+price+"']")).getText();
                 System.out.println(ShirtPrice);
+
+                driver.close();
 
                 break;
             }
